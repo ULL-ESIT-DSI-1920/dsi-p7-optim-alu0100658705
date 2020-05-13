@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap|Scope+One");
-
 :root {
   --header-font: Signika, serif;
   --normal-font: "Scope One", sans-serif;
@@ -14,8 +13,7 @@ body {
   margin: 0;
 }
 
-h1,
-h2 {
+h1, h2 {
   font-family: var(--header-font);
   margin: 0;
   text-align: center;
@@ -25,6 +23,7 @@ h2 {
 h1 {
   font-size: 3rem;
 }
+
 h2 {
   font-size: 2.5rem;
 }
@@ -38,16 +37,13 @@ h2 {
   z-index: 5;
   width: 100%;
   font-size: 1.25rem;
-
   & .block {
     padding: 16px 20px;
   }
-
   & .social a {
     padding: 0 4px;
     font-size: 1.5rem;
   }
-
   & a {
     font-family: var(--header-font);
     color: white;
@@ -69,12 +65,10 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   margin-top: 4em;
   padding: 1em;
   font-size: 2rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
   & p {
     max-width: 950px;
     margin: 2em 1em 0 1em;
@@ -107,10 +101,7 @@ video {
   font-size: 2rem;
   text-align: center;
   padding: 1em 2em;
-
-  & p {
-  }
-
+  & p {}
   & video {
     border-color: white;
   }
@@ -128,7 +119,6 @@ section {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(4, 1fr);
   padding-top: 3em;
-
   & img {
     max-width: 100%;
   }
@@ -141,14 +131,12 @@ section {
 }
 
 .practices.gallery {
-  --number-columns: 4;
-
+  --number-columns: 6;
   grid-template-columns: repeat(var(--number-columns), 300px);
   grid-template-rows: repeat(2, 300px);
   text-align: center;
   justify-content: center;
   align-items: stretch;
-
   & figure {
     background: linear-gradient(134deg, transparent 70%, #999 80%), linear-gradient(211deg, #fff, #aaa);
     padding: 2em;
@@ -185,7 +173,6 @@ a.button {
   border-radius: 10px;
   background-color: transparent;
   transition: background-color 0.5s;
-
   &:hover {
     background: black;
   }
@@ -208,11 +195,9 @@ footer {
   background: #222;
   margin-top: 2em;
   padding: 1em;
-
   & p {
     margin: 0;
   }
-
   & a {
     color: cyan;
   }
@@ -260,8 +245,7 @@ td {
   tr td:nth-child(1) {
     background: #111;
   }
-  th,
-  td {
+  th, td {
     display: block;
   }
 }
