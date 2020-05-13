@@ -128,6 +128,8 @@
 
    Trás las modificaciones realizadas, comprobamos desde _Dev Tools_ los nuevos valores de los recursos:
 
+   ![cap21](src/assets/cap21.png)
+
    Y generamos un nuevo fichero html con _bundle-visualiser_:
 
    ![cap20](src/assets/cap20.png)
