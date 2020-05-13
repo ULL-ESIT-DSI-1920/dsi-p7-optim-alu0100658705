@@ -78,8 +78,60 @@
 
    Trás ver los resultados en ambos videos, no sabría cual de los códecs empleados considerar mejor, por un lado **h265** muestra una reducción del tamaño considerable, pero lejos del nivel de **VP9**, y por otro, **h265** conserva la misma calidad del video original, mientras que **VP9** hace que se vea bastante peor.
 
+   Cabe destacar, que para el primer video, el resultado de la operación no era reproducible en la web, por lo que se ha tenido que ejecutar <code>ffmpeg -i typing_nc.mp4 -pix_fmt yuv420p typing_final.mp4</code>, obteniendo un tamaño de 12MB.
+
 3. **Utiliza las herramientas de optimización o estrategias que consideres oportunas para optimizar el resto de recursos de la página (JPEG, PNG, SVG, HTML, CSS, etc...). Refleja en el informe las particularidades para cada tipo de archivo.**
 
-4) **Resultados finales**
+- Optimización de los ficheros HTML, CSS y JS con la herramienta _htmlnano_:
+
+  HTML: Se hace uso del siguiente fichero de configuración definido en las transparencias:
+
+  ![cap11](src/assets/cap11.png)
+
+  Trás realizar _parcel build_ obtenemos un tamaño del fichero "index.html" de 6.4KB frente a los 6.8KB del fichero original.
+
+  CSS: Añadimos las siguiente líneas al fichero anterior:
+
+  ![cap12](src/assets/cap12.png)
+
+  El fichero index.css que originalmente ocupaba 4.1KB, pasa a tener un tamaño de 3.1KB.
+
+  JS: Para optimizar los ficheros .js es necesario modificar el fichero _.htmlnanorc_ nuevamente:
+
+  ![cap13](src/assets/cap13.png)
+
+  Se obtiene un tamaño del fichero _index.js_ trás la ejecución del "build" de 1.3MB.
+
+- Optimización de imágnes:
+
+  Para las imágenes en formato _PNG_ haremos uso de la herramienta **optiPNG**:
+
+  ![cap14](src/assets/cap14.png)
+
+  Aquellas que tienen formato _SVG_ se optimizan con **SVGO**:
+
+  ![cap15](src/assets/cap15.png)
+
+  Y finalmente, para las imágenes _jpeg_ utilizamos **jpegoptim**:
+
+  ![cap17](src/assets/cap17.png)
+
+  Con aquellas imágenes que muestren un porcentaje de compresión bajo (<5%), probaremos a aplicarle un tamaño predefinido igual a la mitad de su tamaño actual:
+
+  ![cap18](src/assets/cap18.png)
+
+  Para cada una de las imágenes se ha comprobado que no han perdido calidad o, si lo han hecho, ha sido en muy baja medida.
+
+4. **Resultados finales**
+
+   Trás las modificaciones realizadas, comprobamos desde _Dev Tools_ los nuevos valores de los recursos:
+
+   Y generamos un nuevo fichero html con _bundle-visualiser_ accesible desde la web.
 
 **Reto: Elige uno de los recursos (video, imagen, etc...) de tu página. Intenta optimizarlo con diferentes herramientas y formatos y haz una tabla comparativa para indicar cuál tiene los mejores resultados con ese archivo en cuestión.**
+
+Defino una nueva tabla donde comparo diferentes herramientas y formatos sobre las imágenes en formaro _png_ que añadí a la web. Utilizo las herramientas **optiPNG** (con el mayor nivel de optimización), **PNGCrush** y **pngquant**:
+
+![cap16](src/assets/cap16.png)
+
+Quien muestra mejores resultados es **pngquant**, comprimiendo las imágenes de manera más significativa y manteniendo la misma calidad que la original.
