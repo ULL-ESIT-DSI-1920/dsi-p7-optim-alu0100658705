@@ -40,7 +40,9 @@
 
    ![cap07](src/assets/cap07.png)
 
-   Con el plugin de _bundle-visualiser_ se ha generado un fichero html con los tamaños de los archivos originales, se puede visitar desde la parte del _informe de optimización_ de la web.
+   Con el plugin de _bundle-visualiser_ se ha generado un fichero html con los tamaños de los archivos originales:
+
+   ![cap19](src/assets/cap19.png)
 
 ### OPTIMIZACIÓN:
 
@@ -126,7 +128,9 @@
 
    Trás las modificaciones realizadas, comprobamos desde _Dev Tools_ los nuevos valores de los recursos:
 
-   Y generamos un nuevo fichero html con _bundle-visualiser_ accesible desde la web.
+   Y generamos un nuevo fichero html con _bundle-visualiser_:
+
+   ![cap20](src/assets/cap20.png)
 
 **Reto: Elige uno de los recursos (video, imagen, etc...) de tu página. Intenta optimizarlo con diferentes herramientas y formatos y haz una tabla comparativa para indicar cuál tiene los mejores resultados con ese archivo en cuestión.**
 
